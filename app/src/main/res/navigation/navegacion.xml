@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegacion"
+    app:startDestination="@id/fragmentLogin">
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.pqrs.ui.fragments.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentVistaGeneral"
+            app:destination="@id/fragmentVistaGeneral" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentRegistro"
+            app:destination="@id/fragmentRegistro" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRegistro"
+        android:name="com.example.pqrs.ui.fragments.FragmentRegistro"
+        android:label="FragmentRegistro" >
+        <action
+            android:id="@+id/action_fragmentRegistro_to_fragmentVistaGeneral"
+            app:destination="@id/fragmentVistaGeneral" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAgregarYEditarPQR"
+        android:name="com.example.pqrs.ui.fragments.FragmentAgregarYEditarPQR"
+        android:label="fragment_agregar_y_editar_p_q_r"
+        tools:layout="@layout/fragment_agregar_y_editar_p_q_r" >
+        <argument
+            android:name="idPQR"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetallesPQR"
+        android:name="com.example.pqrs.ui.fragments.FragmentDetallesPQR"
+        android:label="fragment_detalles_p_q_r"
+        tools:layout="@layout/fragment_detalles_p_q_r" >
+        <action
+            android:id="@+id/action_fragmentDetallesPQR_to_fragmentAgregarYEditarPQR"
+            app:destination="@id/fragmentAgregarYEditarPQR" />
+        <argument
+            android:name="idPQR"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentVistaGeneral"
+        android:name="com.example.pqrs.ui.fragments.FragmentVistaGeneral"
+        android:label="fragment_vista_general"
+        tools:layout="@layout/fragment_vista_general" >
+        <action
+            android:id="@+id/action_fragmentVistaGeneral_to_fragmentDetallesPQR"
+            app:destination="@id/fragmentDetallesPQR" />
+        <action
+            android:id="@+id/action_fragmentVistaGeneral_to_fragmentAgregarYEditarPQR"
+            app:destination="@id/fragmentAgregarYEditarPQR" />
+    </fragment>
+</navigation>

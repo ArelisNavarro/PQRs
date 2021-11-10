@@ -1,19 +1,18 @@
-package com.example.pqrs
+package com.example.pqrs.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import java.io.BufferedInputStream
-import java.io.InputStream
-import java.net.HttpURLConnection
-import java.net.URL
-import javax.net.ssl.HttpsURLConnection
+import com.example.pqrs.R
+import com.example.pqrs.utils.toHtmlText
 
-class MainActivity : AppCompatActivity() {
+class Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var prueba=1
 
+       var string= getString(R.string.estado,prueba.toString()).toHtmlText()
 
 
 

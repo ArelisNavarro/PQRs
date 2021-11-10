@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">PQRs</string>
+    <string name="app_name">PQRs Admin App</string>
+    <string name="Registro_nombre">Nombre</string>
+    <string name="Registro_apellido">Apellido</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="registrar">Registrarme</string>
+    <string name="Ir_a_login"><u>Ir al logIn</u></string>
+    <string name="Iniciar_Sesion">Iniciar Sesión</string>
+    <string name="Ir_a_registrar"><u>Registrarme</u></string>
+
+    <string name="estado"><![CDATA[<strong>Estado:</strong> %1$s]]></string>
+    <string name="Tipo_pqr"><![CDATA[<strong>Tipo:</strong> %1$s]]></string>
+    <string name="usuario_pqr"><![CDATA[<strong>Usuario:</strong> %1$s]]></string>
+    <string name="asunto"><![CDATA[<strong>Asunto:</strong> %1$s]]></string>
+    <string name="fecha_creacion"><![CDATA[<strong>Fecha de creación:</strong> %1$s]]></string>
+    <string name="fecha_limite"><![CDATA[<strong>Fecha limite:</strong> %1$s]]></string>
+    <string name="vigencia"><![CDATA[<strong>Vigencia:</strong> %1$s]]></string>
+
+
+    <string name="listadoGeneral">Listado general</string>
+    <string name="ver_reporte">Ver reporte</string>
+    <string name="Agregar_pqr">Agregar</string>
+    <string name="tipo_pqr_create">Tipo:</string>
+    <string name="usuario_pqr_create">Usuario:</string>
+    <string name="fecha__creacion">Fecha creación:</string>
+    <string name="guardar_pqr">Guardar</string>
+    <string name="actualizar_pqr">Actualizar</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">Borrar</string>
+
+
 </resources>
