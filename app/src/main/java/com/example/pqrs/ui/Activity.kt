@@ -10,11 +10,6 @@ class Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var prueba=1
-
-       var string= getString(R.string.estado,prueba.toString()).toHtmlText()
-
-
 
     }
 }

@@ -5,6 +5,16 @@
     tools:context=".ui.fragments.FragmentLogin"
     >
 
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.example.pqrs.ui.fragments.FragmentLogin" />
+
+
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/usuario"
+        android:hint="@string/Registro_nombre"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/Iniciar_Sesion"
+        android:onClickListener="@{fragment::loguear}"
         app:layout_constraintEnd_toEndOf="@+id/edtUsuario"
         app:layout_constraintStart_toStartOf="@+id/edtContraseña"
         app:layout_constraintTop_toBottomOf="@+id/edtContraseña" />
@@ -62,6 +73,7 @@
         android:layout_marginTop="16dp"
         android:elegantTextHeight="true"
         android:text="@string/Ir_a_registrar"
+        android:onClickListener="@{fragment::irARegistro}"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/butLogIn"

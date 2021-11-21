@@ -8,8 +8,14 @@
     <data>
         <variable
             name="fragment"
-            type="String" />
+            type="com.example.pqrs.ui.fragments.FragmentRegistro" />
+
+        <variable
+            name="adapterSpiner"
+            type="android.widget.ArrayAdapter" />
+
     </data>
+
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -71,28 +77,29 @@
         app:layout_constraintTop_toBottomOf="@+id/edtRegistroUsuario"
         tools:ignore="TouchTargetSizeCheck" />
 
+    <Spinner
+        android:id="@+id/listaRol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:adapter="@{adapterSpiner}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtRegistroContraseña"
+        app:layout_constraintTop_toBottomOf="@+id/edtRegistroContraseña" />
+
     <Button
         android:id="@+id/butRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:onClickListener="@{fragment::registrar}"
+        android:text="@string/registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edtRegistroNombre"
         app:layout_constraintStart_toStartOf="@+id/edtRegistroContraseña"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegistroContraseña"
-        tools:text="@string/registrar" />
+        app:layout_constraintTop_toBottomOf="@+id/listaRol"
+        app:layout_constraintVertical_bias="0.19" />
 
-    <TextView
-        android:id="@+id/tvIrALogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/Ir_a_login"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/butRegistrar"
-        app:layout_constraintStart_toStartOf="@+id/butRegistrar"
-        app:layout_constraintTop_toBottomOf="@+id/butRegistrar"
-        app:layout_constraintVertical_bias="0.0" />
 
     <include
         android:id="@+id/include"
