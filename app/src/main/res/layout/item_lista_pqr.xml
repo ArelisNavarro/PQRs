@@ -10,6 +10,9 @@
             name="pqr"
             type="com.example.pqrs.ui.adapters.PQRitem" />
 
+
+
+
     </data>
 
 
@@ -22,21 +25,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp"
+            android:paddingStart="18dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
             android:text="@{pqr.tipo}" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp"
+            android:paddingStart="18dp"
+            android:paddingLeft="16dp"
             android:text="@{pqr.usuario}" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp"
+            android:paddingStart="18dp"
+            android:paddingLeft="16dp"
+            android:paddingEnd="8dp"
             android:text="@{pqr.estado}" />
     </LinearLayout>
 

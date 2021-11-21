@@ -29,7 +29,7 @@
         android:id="@+id/fragmentAgregarYEditarPQR"
         android:name="com.example.pqrs.ui.fragments.FragmentAgregarYEditarPQR"
         android:label="fragment_agregar_y_editar_p_q_r"
-        tools:layout="@layout/fragment_agregar_y_editar_p_q_r" >
+        tools:layout="@layout/fragment_detalle_p_q_r" >
         <argument
             android:name="idPQR"
             app:argType="integer"
@@ -39,7 +39,7 @@
         android:id="@+id/fragmentDetallesPQR"
         android:name="com.example.pqrs.ui.fragments.FragmentDetallesPQR"
         android:label="fragment_detalles_p_q_r"
-        tools:layout="@layout/fragment_detalles_p_q_r" >
+        tools:layout="@layout/fragment_agregar_editar_p_q_r" >
         <action
             android:id="@+id/action_fragmentDetallesPQR_to_fragmentAgregarYEditarPQR"
             app:destination="@id/fragmentAgregarYEditarPQR" />

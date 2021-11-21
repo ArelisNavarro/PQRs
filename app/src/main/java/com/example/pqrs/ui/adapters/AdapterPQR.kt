@@ -26,7 +26,10 @@ class AdapterPQR:RecyclerView.Adapter<AdapterPQR.Miviewholder>(){
      override fun onBindViewHolder(holder: Miviewholder, position: Int) {
         var pqr= lista[position]
 
-         holder.binding.pqr=PQRitem("Tipo: ${pqr.tipo}","Usuario: ${pqr.usuario.nombre} ${pqr.usuario.apellido}","Estado: ${pqr.estado}")
+         holder.binding.pqr=PQRitem("${pqr.tipo}","Usuario: ${pqr.usuario.nombre} ${pqr.usuario.apellido}","Estado: ${pqr.estado}")
+
+       var v= holder.itemView
+
      }
 
      override fun getItemCount():Int{
