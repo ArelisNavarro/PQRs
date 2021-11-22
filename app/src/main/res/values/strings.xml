@@ -29,5 +29,8 @@
     <string name="editar">Editar</string>
     <string name="borrar">Borrar</string>
 
+    <string name="cerrarSesion">Cerrar Sesión</string>
+    <string name="informacion">Informacion</string>
+
 
 </resources>

@@ -11,6 +11,9 @@ import com.example.pqrs.model.response.PQRs
 class AdapterPQR:RecyclerView.Adapter<AdapterPQR.Miviewholder>(){
 
      var lista = ArrayList<PQRs>()
+     var clik:(id:Int)->Unit ={
+     }
+
 
     class Miviewholder( v: View) : RecyclerView.ViewHolder(v){
 
@@ -26,7 +29,15 @@ class AdapterPQR:RecyclerView.Adapter<AdapterPQR.Miviewholder>(){
      override fun onBindViewHolder(holder: Miviewholder, position: Int) {
         var pqr= lista[position]
 
-         holder.binding.pqr=PQRitem("${pqr.tipo}","Usuario: ${pqr.usuario.nombre} ${pqr.usuario.apellido}","Estado: ${pqr.estado}")
+
+
+         holder.binding.pqr=PQRitem(
+             pqr.id,
+             pqr.tipo,
+             "Usuario: ${pqr.usuario.nombre} ${pqr.usuario.apellido}",
+             "Estado: ${pqr.estado}",
+             clik
+         )
 
        var v= holder.itemView
 
@@ -45,4 +56,10 @@ class AdapterPQR:RecyclerView.Adapter<AdapterPQR.Miviewholder>(){
  }
 
 
-data class PQRitem(var tipo:String,var usuario:String,var estado:String)
+data class PQRitem(
+    var id:Int,
+    var tipo:String,
+    var usuario:String,
+    var estado:String,
+    var clic: (id: Int) -> Unit
+    )

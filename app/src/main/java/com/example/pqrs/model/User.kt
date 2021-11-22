@@ -9,4 +9,6 @@ data class User(
     val contrasena:String,
     val token:String,
     val rol:Int
-)
+){
+    constructor(id:Int) : this(id,-1,"","","","","",-1)
+}

@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.pqrs.App
 import com.example.pqrs.model.User
 
@@ -38,18 +39,40 @@ fun BaseFragment.getUserLogueado():User{
 
     var cursor= db.rawQuery("SELECT * FROM Usuario WHERE id=1",null,null)
 
-    cursor.moveToFirst()
 
-    var id= cursor.getInt(0)
-    var idRemoto=cursor.getInt(1)
-    var name= cursor.getString(2)
-    var apellido= cursor.getString(3)
-    var username= cursor.getString(4)
-    var contrasena= cursor.getString(5)
-    var token= cursor.getString(6)
-    var rol= cursor.getInt(7)
+    if (cursor.moveToFirst()){
+        var id= cursor.getInt(0)
+        var idRemoto=cursor.getInt(1)
+        var name= cursor.getString(2)
+        var apellido= cursor.getString(3)
+        var username= cursor.getString(4)
+        var contrasena= cursor.getString(5)
+        var token= cursor.getString(6)
+        var rol= cursor.getInt(7)
+        var user=User(id,idRemoto,name,apellido,username,contrasena,token,rol)
+        return user
+    }else{
+        return User(-1)
+    }
 
-    var user=User(id,idRemoto,name,apellido,username,contrasena,token,rol)
-    return user
+}
+
+fun BaseFragment.Desloguear(){
+    db.execSQL("DELETE FROM Usuario")
+    when(this){
+        is FragmentVistaGeneral->{
+            var accion=FragmentVistaGeneralDirections.actionFragmentVistaGeneralToFragmentLogin()
+            findNavController().navigate(accion)
+        }
+        is FragmentAgregarYEditarPQR->{
+            var accion=FragmentAgregarYEditarPQRDirections.actionFragmentAgregarYEditarPQRToFragmentLogin()
+            findNavController().navigate(accion)
+        }
+        is FragmentDetallesPQR->{
+            var accion=FragmentDetallesPQRDirections.actionFragmentDetallesPQRToFragmentLogin()
+            findNavController().navigate(accion)
+        }
+        else->{}
+    }
 }
 

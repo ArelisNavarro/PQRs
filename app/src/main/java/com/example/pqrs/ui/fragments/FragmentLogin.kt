@@ -22,6 +22,14 @@ import retrofit2.Response
 class FragmentLogin : BaseFragment() {
 
     lateinit var b:FragmentLoginBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        var user=getUserLogueado()
+        if (user.id == -1){}else{
+            irAGeneral()
+        }
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +37,7 @@ class FragmentLogin : BaseFragment() {
     ): View? {
         b= FragmentLoginBinding.bind(inflater.inflate(R.layout.fragment_login, container, false))
         return b.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -92,8 +101,7 @@ class FragmentLogin : BaseFragment() {
                                 log("Se ha logueado exitoxamente ${usuario.content.usuarioDTO.nombre}")
                                 updateUserLogueado(user)
 
-                                var accion= FragmentLoginDirections.actionFragmentLoginToFragmentVistaGeneral()
-                                findNavController().navigate(accion)
+                                irAGeneral()
 
                             }
                         }
@@ -111,6 +119,11 @@ class FragmentLogin : BaseFragment() {
 
         }
 
+    }
+
+    private fun irAGeneral() {
+        var accion = FragmentLoginDirections.actionFragmentLoginToFragmentVistaGeneral()
+        findNavController().navigate(accion)
     }
 
 

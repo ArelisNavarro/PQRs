@@ -1,10 +1,10 @@
 package com.example.pqrs.ui.fragments
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,11 +35,13 @@ class FragmentVistaGeneral : BaseFragment() {
         return b.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
         b.reciclerpqr.layoutManager=LinearLayoutManager(requireContext())
         b.reciclerpqr.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         adapterPQR=AdapterPQR()
+        adapterPQR.clik={ id: Int -> findNavController().navigate(FragmentVistaGeneralDirections.actionFragmentVistaGeneralToFragmentDetallesPQR(id)) }
         b.reciclerpqr.adapter=adapterPQR
 
 
@@ -72,9 +74,21 @@ class FragmentVistaGeneral : BaseFragment() {
                 notifyErrorWithAction("ERROR: ${t.message}","REINTENTAR",{})
                 log(t.message)
             }
-
-
         })
-
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_principal, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+
+            R.id.menuCerrarSesion ->{Desloguear()}
+            R.id.menuInformation ->{toast("Esta es la infomacion de la app perro")}
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

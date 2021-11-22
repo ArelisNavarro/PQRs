@@ -10,15 +10,13 @@
             name="pqr"
             type="com.example.pqrs.ui.adapters.PQRitem" />
 
-
-
-
     </data>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:onClickListener="@{(v)-> pqr.clic.invoke(pqr.id)}"
         android:orientation="vertical">
 
         <TextView
