@@ -15,13 +15,10 @@ import android.database.sqlite.SQLiteOpenHelper
 
          db.execSQL("CREATE TABLE IF NOT EXISTS Usuario(id INTEGER PRIMARY KEY,idRemoto INTEGER, nombre TEXT, apellido TEXT, username TEXT, contrasena INTEGER, token TEXT,rol INTEGER)")
 
+
+         db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioRemotos(id INTEGER PRIMARY KEY,username TEXT)")
      }
 
      override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-
-
-
      }
-
-
  }

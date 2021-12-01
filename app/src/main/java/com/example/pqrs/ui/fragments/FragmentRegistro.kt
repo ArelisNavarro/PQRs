@@ -109,10 +109,6 @@ class FragmentRegistro : BaseFragment() {
         })
     }
 
-    private fun volver() {
-        requireActivity().onBackPressed()
-    }
-
 
 
 }

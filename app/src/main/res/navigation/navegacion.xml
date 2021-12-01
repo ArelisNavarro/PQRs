@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentVistaGeneral"
-            app:destination="@id/fragmentVistaGeneral" />
+            app:destination="@id/fragmentVistaGeneral"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentRegistro"
             app:destination="@id/fragmentRegistro" />

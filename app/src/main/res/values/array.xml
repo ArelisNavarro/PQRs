@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="usuarios">
+        <item>Administrador</item>
+        <item>Usuario</item>
+</string-array>
+
+
+    <string-array name="tipopqr">
+        <item>Petición</item>
+        <item>Queja</item>
+        <item>Reclamo</item>
+    </string-array>
+
+
+
 </resources>

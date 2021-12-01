@@ -42,66 +42,73 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|start"
             android:padding="3dp"
+            android:paddingStart="16dp"
             android:text="@string/Tipo_pqr" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tvAsuntoPqr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|start"
             android:padding="3dp"
+            android:paddingStart="16dp"
             android:text="@string/asunto" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tvFechaCreacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|start"
             android:padding="3dp"
+            android:paddingStart="16dp"
             android:text="@string/fecha_creacion" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/tvUsuarioPQr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|start"
             android:padding="3dp"
+            android:paddingStart="16dp"
             android:text="@string/usuario_pqr" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tvEstadoPqr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|start"
             android:padding="3dp"
+            android:paddingStart="16dp"
             android:text="@string/estado" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tvFechaLimitePqr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|start"
             android:padding="3dp"
+            android:paddingStart="16dp"
             android:text="@string/fecha_limite" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/tvVigenciaPqr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|start"
             android:padding="3dp"
+            android:paddingStart="16dp"
             android:text="@string/vigencia" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

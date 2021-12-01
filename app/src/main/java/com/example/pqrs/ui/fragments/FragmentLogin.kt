@@ -81,11 +81,7 @@ class FragmentLogin : BaseFragment() {
                             if (usuario.status.code==3){
                                 toast(usuario.content.error)
                                 return
-                            }
-
-                            if (it.content==null){
-                                notifyErrorWithAction("Registrese","ir a",{irARegistro(v)})
-                            }else{
+                            } else{
 
                                 var user=User(
                                     0,
@@ -96,7 +92,6 @@ class FragmentLogin : BaseFragment() {
                                     it.content.password,
                                     it.content.token,
                                     it.content.usuarioDTO.rol.id
-
                                 )
                                 log("Se ha logueado exitoxamente ${usuario.content.usuarioDTO.nombre}")
                                 updateUserLogueado(user)

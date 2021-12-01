@@ -5,6 +5,14 @@
     tools:context=".ui.fragments.FragmentVistaGeneral"
     >
 
+
+    <data>
+        <variable
+            name="fragmento"
+            type="com.example.pqrs.ui.fragments.FragmentVistaGeneral" />
+
+    </data>
+
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -50,6 +58,7 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClickListener="@{fragmento::iraAgregar}"
             android:text="@string/Agregar_pqr"
             app:layout_constraintBottom_toBottomOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
