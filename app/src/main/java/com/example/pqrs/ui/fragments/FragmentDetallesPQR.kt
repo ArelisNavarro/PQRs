@@ -1,16 +1,17 @@
 package com.example.pqrs.ui.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.pqrs.R
 import com.example.pqrs.databinding.FragmentDetallePQRBinding
 import com.example.pqrs.model.response.RespuestaPQRs
 import com.example.pqrs.service.ApiRest
 import com.example.pqrs.utils.getHtml
-import com.example.pqrs.utils.log
 import com.example.pqrs.utils.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,11 +36,14 @@ class FragmentDetallesPQR : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
+        var idpqr = argument.idPQR
+        b.fragment=this
 
+        b.id=idpqr
 
      if ( argument.idPQR==-1){ volver()
-     }else{peticion()}
-
+     }else{
+         peticion()}
     }
 
     private fun peticion() {
@@ -71,14 +75,10 @@ class FragmentDetallesPQR : BaseFragment() {
                             b.tvFechaLimitePqr.text =
                                 getHtml(R.string.fecha_limite, pqr0.fechaLimite)
                             b.tvVigenciaPqr.text = getHtml(R.string.vigencia, pqr0.vigencia)
-
                         }
                     }
-
                 }
-
             }
-
             override fun onFailure(call: Call<RespuestaPQRs>, t: Throwable) {
                 if (t.message!!.contains("Too many")) {
                     reloguearse(this@FragmentDetallesPQR::peticion)
@@ -87,4 +87,10 @@ class FragmentDetallesPQR : BaseFragment() {
             }
         })
     }
+
+    fun irAEditar(id:Int){
+        findNavController().navigate(FragmentDetallesPQRDirections.actionFragmentDetallesPQRToFragmentEditar(id))
+    }
 }
+
+

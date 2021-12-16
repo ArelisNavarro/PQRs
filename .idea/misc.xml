@@ -4,15 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/filtro_users.xml" value="0.21" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_agregar_editar_p_q_r.xml" value="0.25" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_agregar_y_editar_p_q_r.xml" value="0.2" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_detalle_p_q_r.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_detalles_p_q_r.xml" value="0.25" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_editar.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_registro.xml" value="0.22" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/fragment_vista_general.xml" value="0.17873892652423137" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/item_lista_pqr.xml" value="0.2" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/nombre_app.xml" value="0.22" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/layout/simpleitemusers.xml" value="0.15" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PQRs/app/src/main/res/menu/menu_principal.xml" value="0.17864583333333334" />
       </map>
     </option>

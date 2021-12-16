@@ -1,5 +1,6 @@
 package com.example.pqrs.service
 
+import com.example.pqrs.model.recuest.ActualizarPQR
 import com.example.pqrs.model.recuest.CrearPQR
 import com.example.pqrs.model.recuest.CrearUsuario
 import com.example.pqrs.model.response.*
@@ -52,6 +53,12 @@ interface ApiInterface {
         @Body  pqr:CrearPQR
     ):Call<RespuestaPQRs>
 
+
+    @PUT("/pqr/updatePqr")
+    fun updatePQR(
+        @Header("Authorization") token:String,
+        @Body  pqr: ActualizarPQR
+    ):Call<RespuestaPQRs>
 }
 
 

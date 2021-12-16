@@ -8,9 +8,14 @@
 
 
     <string-array name="tipopqr">
-        <item>Petición</item>
+        <item>Peticion</item>
         <item>Queja</item>
         <item>Reclamo</item>
+    </string-array>
+    <string-array name="estado">
+        <item>NUEVO</item>
+        <item>EN_EJECUCION</item>
+        <item>CERRADO</item>
     </string-array>
 
 

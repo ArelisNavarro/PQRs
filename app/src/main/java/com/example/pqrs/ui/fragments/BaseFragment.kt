@@ -16,6 +16,7 @@ import com.example.pqrs.utils.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.reflect.KFunction1
 
 open class BaseFragment:Fragment() {
 
@@ -141,6 +142,7 @@ fun BaseFragment.reloguearse(funcionBody: () -> Unit) {
 
 fun BaseFragment.putUsers(usuarios: ArrayList<ContentUser>){
 
+
     usuarios.forEach {
         var values=ContentValues()
         values.put("username",it.username)
@@ -148,3 +150,7 @@ fun BaseFragment.putUsers(usuarios: ArrayList<ContentUser>){
     }
 
 }
+
+
+
+

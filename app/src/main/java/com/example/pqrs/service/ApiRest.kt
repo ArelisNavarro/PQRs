@@ -2,6 +2,7 @@ package com.example.pqrs.service
 
 import android.media.session.MediaSession
 import com.example.pqrs.model.User
+import com.example.pqrs.model.recuest.ActualizarPQR
 import com.example.pqrs.model.recuest.CrearPQR
 import com.example.pqrs.model.recuest.CrearUsuario
 import com.example.pqrs.model.response.*
@@ -50,6 +51,10 @@ object ApiRest {
         return apiInterface.crearPQR(token,pqr)
     }
 
+
+    fun updatePQR(pqr: ActualizarPQR, token: String):Call<RespuestaPQRs>{
+        return apiInterface.updatePQR(token,pqr)
+    }
 
     fun getAllUsersNoAdmin(token:String):Call<RespuestaUsers>{
         return apiInterface.obtenerUserByUsername(token)

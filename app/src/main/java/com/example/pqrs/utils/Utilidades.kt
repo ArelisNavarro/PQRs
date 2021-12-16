@@ -6,6 +6,7 @@ import android.text.Spannable
 import android.text.Spanned
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import com.example.pqrs.R
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 fun String.toHtmlText() : Spanned {
     return HtmlCompat.fromHtml(this, HtmlCompat.FROM_HTML_MODE_LEGACY)
@@ -56,8 +58,19 @@ fun Fragment.getHtml(recurso:Int,texto:String):Spanned{
 }
 
 fun getFormattedDateShort(fecha:Long):String{
-    val newFormat = SimpleDateFormat("MMM dd, yyyy")
+    val newFormat = SimpleDateFormat("dd/MM/yyyy")
     return newFormat.format(Date(fecha))
 }
 
+
+fun validateFieldsToCreatePqr(campoText:ArrayList<String>,context: Context,hacer:()-> Unit){
+    campoText.forEach {
+
+        if (it.isNullOrBlank()){
+            Toast.makeText(context, "Complete todos los campos", Toast.LENGTH_SHORT).show()
+            return
+        }
+    }
+    hacer.invoke()
+}
 

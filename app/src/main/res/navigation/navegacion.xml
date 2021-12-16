@@ -13,8 +13,7 @@
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentVistaGeneral"
             app:destination="@id/fragmentVistaGeneral"
-            app:launchSingleTop="false"
-            app:popUpToInclusive="false" />
+            app:launchSingleTop="false" />
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentRegistro"
             app:destination="@id/fragmentRegistro" />
@@ -55,6 +54,9 @@
         <action
             android:id="@+id/action_fragmentDetallesPQR_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
+        <action
+            android:id="@+id/action_fragmentDetallesPQR_to_fragmentEditar"
+            app:destination="@id/fragmentEditar" />
     </fragment>
     <fragment
         android:id="@+id/fragmentVistaGeneral"
@@ -70,5 +72,14 @@
         <action
             android:id="@+id/action_fragmentVistaGeneral_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentEditar"
+        android:name="com.example.pqrs.ui.fragments.FragmentEditar"
+        android:label="FragmentEditar" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
 </navigation>

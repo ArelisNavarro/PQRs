@@ -22,6 +22,7 @@ import retrofit2.Response
 class FragmentLogin : BaseFragment() {
 
     lateinit var b:FragmentLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var user=getUserLogueado()

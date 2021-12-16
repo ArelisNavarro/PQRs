@@ -31,6 +31,7 @@ class FragmentVistaGeneral : BaseFragment() {
         if (user.rol==1){
             guardarUserEndbLocal(user)
         }
+
     }
 
     private fun guardarUserEndbLocal(user: User) {
@@ -51,7 +52,7 @@ class FragmentVistaGeneral : BaseFragment() {
                             toast(usersObtenidos.content.error)
                             return
                         } else {
-
+                            db.execSQL("DELETE FROM UsuarioRemotos")
                             putUsers(it.content.lista)
                         }
                     }
