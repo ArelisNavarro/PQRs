@@ -19,5 +19,19 @@
     </string-array>
 
 
+    <string-array name="estadoIfIsNew">
+        <item>NUEVO</item>
+        <item>EN_EJECUCION</item>
+    </string-array>
+
+
+    <string-array name="estadoIfIsEjecucion">
+        <item>EN_EJECUCION</item>
+        <item>CERRADO</item>
+    </string-array>
+
+    <string-array name="estadoIfIsclosed">
+        <item>CERRADO</item>
+    </string-array>
 
 </resources>

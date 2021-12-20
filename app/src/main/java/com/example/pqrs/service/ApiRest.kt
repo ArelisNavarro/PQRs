@@ -52,8 +52,8 @@ object ApiRest {
     }
 
 
-    fun updatePQR(pqr: ActualizarPQR, token: String):Call<RespuestaPQRs>{
-        return apiInterface.updatePQR(token,pqr)
+    fun updatePQR(pqr: ActualizarPQR, rol:Int,token: String):Call<RespuestaPQRs>{
+        return apiInterface.updatePQR(token,rol,pqr)
     }
 
     fun getAllUsersNoAdmin(token:String):Call<RespuestaUsers>{

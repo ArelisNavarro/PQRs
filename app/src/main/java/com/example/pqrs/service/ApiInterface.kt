@@ -57,6 +57,7 @@ interface ApiInterface {
     @PUT("/pqr/updatePqr")
     fun updatePQR(
         @Header("Authorization") token:String,
+        @Query("rol") rol: Int,
         @Body  pqr: ActualizarPQR
     ):Call<RespuestaPQRs>
 }

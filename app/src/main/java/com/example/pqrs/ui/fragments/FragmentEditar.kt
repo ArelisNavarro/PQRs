@@ -18,6 +18,10 @@ import com.example.pqrs.utils.validateFieldsToCreatePqr
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.widget.ArrayAdapter
+
+
+
 class FragmentEditar : BaseFragment() {
 
     lateinit var b:FragmentAgregarEditarPQRBinding
@@ -65,7 +69,7 @@ class FragmentEditar : BaseFragment() {
         var fechaPqr = b.btExpDate.text.toString().replace("/", "").trim()
         var autorPqr = Usuario(user.username)
 
-        var textos = arrayListOf<String>(asuntopqr, tipoPqr, fechaPqr, autorPqr.username,)
+        var textos = arrayListOf<String>(asuntopqr, tipoPqr, fechaPqr, autorPqr.username)
         validateFieldsToCreatePqr(textos, requireContext()) {
 
             if (user.rol == 2) {
@@ -84,7 +88,7 @@ class FragmentEditar : BaseFragment() {
         var usuario = Usuario(usuarioCreadorPqr)
         var actualizacionPqr= ActualizarPQR(id,asuntopqr,tipoPqr.uppercase(),estadopqr,usuario,autorPqr,fechaPqr)
 
-        var call =ApiRest.updatePQR(actualizacionPqr,user.token)
+        var call =ApiRest.updatePQR(actualizacionPqr,user.rol,user.token)
         call.enqueue(object : Callback<RespuestaPQRs>{
             override fun onResponse(call: Call<RespuestaPQRs>, response: Response<RespuestaPQRs>) {
 
@@ -120,7 +124,7 @@ class FragmentEditar : BaseFragment() {
         var stadopqr=b.tvEstado.text.toString()
         var actualizacionPqr=ActualizarPQR(id,asuntopqr,tipoPqr.uppercase(),stadopqr,autorPqr,autorPqr,fechaPqr)
 
-        var call =ApiRest.updatePQR(actualizacionPqr,user.token)
+        var call =ApiRest.updatePQR(actualizacionPqr,user.rol,user.token)
         call.enqueue(object : Callback<RespuestaPQRs>{
             override fun onResponse(call: Call<RespuestaPQRs>, response: Response<RespuestaPQRs>) {
 
@@ -182,13 +186,13 @@ class FragmentEditar : BaseFragment() {
                           }
                             b.spTipoPqr.setSelection(position)
 
-
                             var estado=  when(pqr.estado){
                                 "NUEVO"->0
                                 "EN_EJECUCION"->1
                                 "CERRADO"->2
                                 else -> 0
                             }
+
                             b.spEstado.setSelection(estado)
 
                             idPQR=pqr.id
